@@ -10,7 +10,7 @@ venv/
 .env.*
 
 # Configuraciones de PyCharm
-.idea/
+../.idea/
 *.iml
 
 # Archivos de sistema de macOS
