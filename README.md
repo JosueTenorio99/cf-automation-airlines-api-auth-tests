@@ -42,7 +42,11 @@ All work was performed independently by me, **Josué Tenorio**, using the API or
 
 ## File Organization
 
+- `/postman/api-airlines.postman_collection.json`:  
+  Complete **Postman collection** for this project.  
+  You can import this file into Postman to easily replicate all requests (including signup, login, user, airport, flight, booking, and payment endpoints) and validate or expand the test scenarios described in this repo.
 - [Google Sheets - Airlines API Test Cases (public)](https://docs.google.com/spreadsheets/d/1N8kPVLFH3IINNayiLmtJQllj9gmc0mOD/edit?usp=sharing&ouid=103821588095645487144&rtpof=true&sd=true): For easy review and sharing
+- `airlines_api_test_cases.xlsx`: Backup of all manual test cases (included in this repo)
 - `/github/issues`: All critical bugs were reported and tracked as GitHub Issues in this repository
 
 ---
@@ -99,6 +103,8 @@ The following critical bugs were discovered and reported during testing:
   [Airlines API Test Cases – Google Sheets](https://docs.google.com/spreadsheets/d/1N8kPVLFH3IINNayiLmtJQllj9gmc0mOD/edit?usp=sharing&ouid=103821588095645487144&rtpof=true&sd=true)
 - **Excel file (backup, included in this repo):**  
   `airlines_api_test_cases.xlsx`
+- **Postman Collection (import into Postman to replay/validate scenarios):**  
+  `/postman/api-airlines.postman_collection.json`
 
 ---
 
@@ -166,7 +172,11 @@ Todo el trabajo fue realizado de forma independiente por mi, **Josué Tenorio**,
 
 ## Organización de Archivos
 
+- `/postman/api-airlines.postman_collection.json`:  
+  **Colección completa de Postman** para este proyecto.  
+  Puedes importar este archivo en Postman para replicar fácilmente todas las solicitudes (incluyendo endpoints de registro, login, usuarios, aeropuertos, vuelos, reservaciones y pagos) y validar o expandir los escenarios de prueba documentados aquí.
 - [Google Sheets - Airlines API Test Cases (público)](https://docs.google.com/spreadsheets/d/1N8kPVLFH3IINNayiLmtJQllj9gmc0mOD/edit?usp=sharing&ouid=103821588095645487144&rtpof=true&sd=true): Acceso fácil y compartible
+- `airlines_api_test_cases.xlsx`: Respaldo de todos los casos de prueba manual (incluido en el repo)
 - `/github/issues`: Todos los bugs críticos fueron reportados y gestionados en los Issues de este repositorio
 
 ---
@@ -223,6 +233,8 @@ Durante las pruebas se detectaron y reportaron los siguientes bugs críticos:
   [Airlines API Test Cases – Google Sheets](https://docs.google.com/spreadsheets/d/1N8kPVLFH3IINNayiLmtJQllj9gmc0mOD/edit?usp=sharing&ouid=103821588095645487144&rtpof=true&sd=true)
 - **Archivo Excel (incluido en el repo):**  
   `airlines_api_test_cases.xlsx`
+- **Colección de Postman (importa en Postman para replicar/validar los escenarios):**  
+  `/postman/api-airlines.postman_collection.json`
 
 ---
 
@@ -241,4 +253,3 @@ Descubrí varios problemas críticos de validación de inputs, lo que es frecuen
 Fortalecí mis habilidades en pruebas exploratorias, documentación y comunicación de resultados técnicos a equipos de desarrollo y stakeholders.
 
 ---
-
