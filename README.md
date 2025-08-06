@@ -8,7 +8,7 @@ All test cases, findings, and bug reports were developed as part of the **Testin
 ## Context
 
 The main goal of this project is to demonstrate deep QA skills, including test design, boundary value analysis, exploratory testing, and detailed bug reporting on a real-world API.  
-All work was performed independently by **Josué Tenorio**, using the API originally created by [@terranigmark](https://github.com/terranigmark).
+All work was performed independently by me, **Josué Tenorio**, using the API originally created by [@terranigmark](https://github.com/terranigmark).
 
 ---
 
@@ -42,7 +42,6 @@ All work was performed independently by **Josué Tenorio**, using the API origin
 
 ## File Organization
 
-- `airlines_api_test_cases.xlsx`: Full set of manual test cases (included in this repository)
 - [Google Sheets - Airlines API Test Cases (public)](https://docs.google.com/spreadsheets/d/1N8kPVLFH3IINNayiLmtJQllj9gmc0mOD/edit?usp=sharing&ouid=103821588095645487144&rtpof=true&sd=true): For easy review and sharing
 - `/github/issues`: All critical bugs were reported and tracked as GitHub Issues in this repository
 
@@ -133,7 +132,7 @@ Todas las pruebas y reportes de bugs fueron realizados como parte del **Bootcamp
 ## Contexto
 
 El objetivo principal de este proyecto es demostrar habilidades sólidas de QA, incluyendo el diseño de casos de prueba, análisis de valores límite, pruebas exploratorias y reporte profesional de bugs en una API real.  
-Todo el trabajo fue realizado de forma independiente por **Josué Tenorio**, utilizando la API original de [@terranigmark](https://github.com/terranigmark).
+Todo el trabajo fue realizado de forma independiente por mi, **Josué Tenorio**, utilizando la API original de [@terranigmark](https://github.com/terranigmark).
 
 ---
 
@@ -167,7 +166,6 @@ Todo el trabajo fue realizado de forma independiente por **Josué Tenorio**, uti
 
 ## Organización de Archivos
 
-- `airlines_api_test_cases.xlsx`: Archivo con todos los casos de prueba manual (incluido en el repositorio)
 - [Google Sheets - Airlines API Test Cases (público)](https://docs.google.com/spreadsheets/d/1N8kPVLFH3IINNayiLmtJQllj9gmc0mOD/edit?usp=sharing&ouid=103821588095645487144&rtpof=true&sd=true): Acceso fácil y compartible
 - `/github/issues`: Todos los bugs críticos fueron reportados y gestionados en los Issues de este repositorio
 
