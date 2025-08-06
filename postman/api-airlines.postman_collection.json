@@ -1,0 +1,948 @@
+{
+	"info": {
+		"_postman_id": "375c8fe3-7d14-4263-9dcd-0aad96be0c92",
+		"name": "api-airlines",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41591016"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"P@ssw0rd\",\n  \"full_name\": \"Anna   Maria\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{AUTH}}/signup",
+							"host": [
+								"{{URL}}{{AUTH}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login as admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "admin@demo.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin123",
+									"type": "text"
+								},
+								{
+									"key": "scope",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}{{AUTH}}/login",
+							"host": [
+								"{{URL}}{{AUTH}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create user as Admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"artya@yon.com\",\n    \"password\": \"pan12345\",\n    \"full_name\": \"Pam Bazo\",\n    \"role\": \"admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{USERS}}",
+							"host": [
+								"{{URL}}{{USERS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{USERS}}",
+							"host": [
+								"{{URL}}{{USERS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user Me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{USERS}}/me",
+							"host": [
+								"{{URL}}{{USERS}}"
+							],
+							"path": [
+								"me"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/users/me' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test@example.com\",\n  \"password\": \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\n  \"full_name\": \"papas\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{USERS}}{{user_id}}",
+							"host": [
+								"{{URL}}{{USERS}}{{user_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\n  'https://cf-automation-airline-api.onrender.com/users/usr-a32f537a' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"email\": \"user@example.com\",\n  \"password\": \"string\",\n  \"full_name\": \"string\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{USERS}}/usr-{{user_id}}",
+							"host": [
+								"{{URL}}{{USERS}}"
+							],
+							"path": [
+								"usr-{{user_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\n  'https://cf-automation-airline-api.onrender.com/users/usr-aef3209a' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Airports",
+			"item": [
+				{
+					"name": "Create Airport",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"iata_code\": \"ZZZ\",\n  \"city\": \"yes\",\n  \"country\": \"picos\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{AIRPORTS}}",
+							"host": [
+								"{{URL}}{{AIRPORTS}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Airpots List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"disabled": true
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{AIRPORTS}}?skip=0&limit=500",
+							"host": [
+								"{{URL}}{{AIRPORTS}}"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "500"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/airports?skip=0&limit=10' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Airport",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{AIRPORTS}}{{airport_id}}",
+							"host": [
+								"{{URL}}{{AIRPORTS}}{{airport_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/airports/zzz' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Update airport",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"iata_code\": \"ZZZ\",\n  \"city\": \"Glasgow\",\n  \"country\": \"Scotland\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{AIRPORTS}}{{airport_id}}",
+							"host": [
+								"{{URL}}{{AIRPORTS}}{{airport_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\n  'https://cf-automation-airline-api.onrender.com/airports/ZZZ' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"iata_code\": \"CGH\",\n  \"city\": \"string\",\n  \"country\": \"string\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Airport",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "{{URL}}{{AIRPORTS}}{{airport_id}}",
+							"host": [
+								"{{URL}}{{AIRPORTS}}{{airport_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\n  'https://cf-automation-airline-api.onrender.com/airports/PEZ' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Flights",
+			"item": [
+				{
+					"name": "Create flights",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"origin\": \"VML\",\n  \"destination\": \"HDD\",\n  \"departure_time\": \"2025-12-20T23:46:29.426Z\",\n  \"arrival_time\": \"2028-07-20T23:46:29.426Z\",\n  \"base_price\": 100,\n  \"aircraft_id\": \"acf-30e9f612\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{FLIGHTS}}",
+							"host": [
+								"{{URL}}{{FLIGHTS}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'https://cf-automation-airline-api.onrender.com/flights' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"origin\": \"VML\",\n  \"destination\": \"HDD\",\n  \"departure_time\": \"2025-07-20T23:46:29.426Z\",\n  \"arrival_time\": \"2025-07-20T23:46:29.426Z\",\n  \"base_price\": 0,\n  \"aircraft_id\": \"string\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get flights list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{FLIGHTS}}?skip=0&limit=10",
+							"host": [
+								"{{URL}}{{FLIGHTS}}"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/flights?skip=0&limit=10' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get flight",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{FLIGHTS}}{{flight_id}}",
+							"host": [
+								"{{URL}}{{FLIGHTS}}{{flight_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/flights/string' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Flight",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"origin\": \"VML\",\n  \"destination\": \"BPD\",\n  \"departure_time\": \"2025-07-20T23:46:29.426Z\",\n  \"arrival_time\": \"2028-07-20T23:46:29.426Z\",\n  \"base_price\": 0,\n  \"aircraft_id\": \"acf-30e9f612\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{FLIGHTS}}{{flight_id}}",
+							"host": [
+								"{{URL}}{{FLIGHTS}}{{flight_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\n  'https://cf-automation-airline-api.onrender.com/flights/12323123' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"origin\": \"BNI\",\n  \"destination\": \"PLM\",\n  \"departure_time\": \"2025-07-21T00:08:07.643Z\",\n  \"arrival_time\": \"2025-07-21T00:08:07.643Z\",\n  \"base_price\": 0,\n  \"aircraft_id\": \"string\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Flight",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{FLIGHTS}}{{flight_id}}",
+							"host": [
+								"{{URL}}{{FLIGHTS}}{{flight_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\n  'https://cf-automation-airline-api.onrender.com/flights/asds' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Create Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"flight_id\": \"flt-0ff77b2a\",\n  \"passengers\": [\n    {\n      \"full_name\": \"Juan Barajas\",\n      \"passport\": \"IZNvSvoc\",\n      \"seat\": \"35A\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{BOOKINGS}}",
+							"host": [
+								"{{URL}}{{BOOKINGS}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'https://cf-automation-airline-api.onrender.com/bookings' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"flight_id\": \"string\",\n  \"passengers\": [\n    {\n      \"full_name\": \"string\",\n      \"passport\": \"string\",\n      \"seat\": \"string\"\n    }\n  ]\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get bookings list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{BOOKINGS}}?skip=0&limit=500",
+							"host": [
+								"{{URL}}{{BOOKINGS}}"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "500"
+								}
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/bookings?skip=0&limit=10' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get booking id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{BOOKINGS}}{{booking_id}}",
+							"host": [
+								"{{URL}}{{BOOKINGS}}{{booking_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/bookings/1232123' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Update booking",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"flight_id\": \"flt-24284da9\",\n  \"passengers\": [\n    {\n      \"full_name\": \"yoni\",\n      \"passport\": \"asdsa\",\n      \"seat\": \"45\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{BOOKINGS}}{{booking_id}}",
+							"host": [
+								"{{URL}}{{BOOKINGS}}{{booking_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PATCH' \\\n  'https://cf-automation-airline-api.onrender.com/bookings/1232123' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"additionalProp1\": {}\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel booking",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{BOOKINGS}}{{booking_id}}",
+							"host": [
+								"{{URL}}{{BOOKINGS}}{{booking_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\n  'https://cf-automation-airline-api.onrender.com/bookings/1232123' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Pay",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"booking_id\": \"bkg-90cc1db4\",\n  \"amount\": 1,\n  \"payment_method\": \"Credit\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{PAYMENTS}}",
+							"host": [
+								"{{URL}}{{PAYMENTS}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'https://cf-automation-airline-api.onrender.com/payments' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"booking_id\": \"string\",\n  \"amount\": 0,\n  \"payment_method\": \"string\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get payment",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{PAYMENTS}}",
+							"host": [
+								"{{URL}}{{PAYMENTS}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/payments/1232123' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Aircrafts",
+			"item": [
+				{
+					"name": "Create aircraft",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tail_number\": \"tails\",\n  \"model\": \"boeing\",\n  \"capacity\": 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{AIRCRAFTS}}",
+							"host": [
+								"{{URL}}{{AIRCRAFTS}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'POST' \\\n  'https://cf-automation-airline-api.onrender.com/aircrafts' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"tail_number\": \"string\",\n  \"model\": \"string\",\n  \"capacity\": 0\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get aircrafts list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://cf-automation-airline-api.onrender.com/aircrafts",
+							"protocol": "https",
+							"host": [
+								"cf-automation-airline-api",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"aircrafts"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/aircrafts?skip=0&limit=10' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Get aircraft id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{AIRCRAFTS}}{{aircraft_id}}",
+							"host": [
+								"{{URL}}{{AIRCRAFTS}}{{aircraft_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'GET' \\\n  'https://cf-automation-airline-api.onrender.com/aircrafts/12321' \\\n  -H 'accept: application/json'"
+					},
+					"response": []
+				},
+				{
+					"name": "Update aircraft",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"tail_number\": \"tails2\",\n  \"model\": \"boeing2\",\n  \"capacity\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{AIRCRAFTS}}{{aircraft_id}}",
+							"host": [
+								"{{URL}}{{AIRCRAFTS}}{{aircraft_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'PUT' \\\n  'https://cf-automation-airline-api.onrender.com/aircrafts/1232123' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"tail_number\": \"string\",\n  \"model\": \"string\",\n  \"capacity\": 0\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete aircraft",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{AIRCRAFTS}}{{aircraft_id}}",
+							"host": [
+								"{{URL}}{{AIRCRAFTS}}{{aircraft_id}}"
+							]
+						},
+						"description": "Generated from cURL: curl -X 'DELETE' \\\n  'https://cf-automation-airline-api.onrender.com/aircrafts/1232123' \\\n  -H 'accept: */*'"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
