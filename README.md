@@ -112,7 +112,7 @@ The following critical bugs were discovered and reported during testing:
 
 **Josué Tenorio**  
 [LinkedIn](https://www.linkedin.com/in/josue-tenorio/)  
-Email: josuetenoriomx@gmail.com
+Email: tndjosue69@gmail.com
 
 ---
 
@@ -242,7 +242,7 @@ Durante las pruebas se detectaron y reportaron los siguientes bugs críticos:
 
 **Josué Tenorio**  
 [LinkedIn](https://www.linkedin.com/in/josue-tenorio/)  
-Correo: josuetenoriomx@gmail.com
+Correo: tndjosue69@gmail.com
 
 ---
 
